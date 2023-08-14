@@ -4,18 +4,37 @@ import {
   Button,
   CardMedia,
   Container,
+  Divider,
   Grid,
+  Link,
+  Paper,
   Typography,
+  styled,
 } from "@mui/material";
 import AppleIcon from "@mui/icons-material/Apple";
+import YouTube from "react-youtube";
 
-import cover from "../../assets/img/bg-cover-products.jpg";
-import top from "../../assets/img/top.png";
 import docs from "../../assets/img/docs.png";
+import head1 from "../../assets/img/head1.jpg";
+import head2 from "../../assets/img/head2.jpg";
+import head3 from "../../assets/img/head3.jpg";
+import head4 from "../../assets/img/head4.jpg";
+import poster from "../../assets/img/poster.jpg";
 
 import { StyledIconBox } from "./style";
 import TEAM_INFO from "../../contents/members";
+import CELEB_INFO from "../../contents/celebs";
 import DynamicImage from "../../components/DynamicImage";
+import Carousel from "react-material-ui-carousel";
+import Logo from "../../components/Logo";
+
+const StyledCarouselBox = styled(Box)(({ backgroundImage }) => ({
+  height: "80vh",
+  background: `${backgroundImage} rgba(0, 0, 0, 0.6)`,
+  backgroundSize: "cover",
+  backgroundBlendMode: "multiply",
+  backgroundPosition: "center",
+}));
 
 const HomePage = () => {
   return (
@@ -23,27 +42,57 @@ const HomePage = () => {
       <Container
         maxWidth="lg"
         sx={{
-          backgroundSize: "cover",
-          backgroundImage: `url(${cover})`,
-          backgroundPosition: "50%",
           borderRadius: 1,
         }}
       >
-        <Box sx={{ textAlign: "center", color: "#fff", p: "80px 20px 140px" }}>
-          <Typography variant="h2">PoweR of Life</Typography>
-          <Typography variant="subtitle1">
-            HCMUS - Kỹ năng mềm_2022-2023
-          </Typography>
+        <Box mx="auto" width="fit-content">
+          <Logo />
         </Box>
-      </Container>
-      <Container maxWidth="lg">
-        <Box sx={{ display: "flex", justifyContent: "center", mt: "-140px" }}>
-          <CardMedia component="img" src={top} sx={{ width: "50%" }} />
+        <Box
+          sx={{
+            textAlign: "center",
+            color: "#fff",
+            p: "0px 0px 140px",
+            position: "relative",
+          }}
+        >
+          <Box
+            sx={{
+              position: "absolute",
+              zIndex: 100,
+              top: 20,
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}
+          >
+            <Typography variant="h2">Power of Life</Typography>
+            <Typography variant="subtitle1">
+              Đồng hành cùng PoL tìm hiểu về
+            </Typography>
+            <Typography fontSize={100} fontFamily="Signature" mt={4}>
+              Real Value of Life
+            </Typography>
+          </Box>
+
+          <Carousel autoPlay indicators={false} duration={300}>
+            <StyledCarouselBox
+              backgroundImage={`url(${head1})`}
+            ></StyledCarouselBox>
+            <StyledCarouselBox
+              backgroundImage={`url(${head2})`}
+            ></StyledCarouselBox>
+            <StyledCarouselBox
+              backgroundImage={`url(${head3})`}
+            ></StyledCarouselBox>
+            <StyledCarouselBox
+              backgroundImage={`url(${head4})`}
+            ></StyledCarouselBox>
+          </Carousel>
         </Box>
       </Container>
       <Container maxWidth="lg">
         <Box textAlign="center" mb={10}>
-          <Typography variant="h2">Our Product</Typography>
+          <Typography variant="h2">"Real Value of Life" là gì ?</Typography>
           <Typography
             variant="subtitle1"
             fontWeight="300"
@@ -53,102 +102,139 @@ const HomePage = () => {
             color="#666"
             mt={2}
           >
-            Open-Source Full-Stack seed project crafted on top of Material
-            Design and React. The product comes with a simple JWT authentication
-            flow: login/register/logout powered by an open-source Node JS API
-            Backend. Based on the permissive (MIT) Licence, the product can be
-            used in commercial projects and eLearning activities.
+            Đoạn văn mô tả chung về một số câu nói, nhận định của những doanh
+            nhân, Đoạn văn mô tả chung về một số câu nói, nhận định của những
+            doanh nhân, Đoạn văn mô tả chung về một số câu nói, nhận định của
+            những doanh nhân, Đoạn văn mô tả chung về một số câu nói, nhận định
+            của những doanh nhân,
           </Typography>
         </Box>
-        <Box mt={4}>
-          <Grid container>
-            <Grid item md={6}>
-              <CardMedia
-                component="img"
-                src={docs}
-                sx={{ width: "60%", ml: 10 }}
-              />
-            </Grid>
-            <Grid item md={6}>
-              <Box>
-                <StyledIconBox>
-                  <AppleIcon fontSize="large" />
-                </StyledIconBox>
-                <Typography variant="h3" color="secondary" my={2}>
-                  Documentation
-                </Typography>
+        {CELEB_INFO.members.map((member, i) => (
+          <Box mt={8}>
+            <Grid container direction={i % 2 === 0 ? "row" : "row-reverse"}>
+              <Grid item md={6}>
+                <DynamicImage path={member.image} alt={member.name} />
+              </Grid>
+              <Grid item md={6}>
+                <Box mx={8}>
+                  <Typography variant="h3" color="secondary" my={2}>
+                    {member.name}
+                  </Typography>
+                  <Typography variant="subtitle1" my={2}>
+                    {member.role}
+                  </Typography>
 
-                <Typography variant="subtitle2">
-                  For more information regarding the product usage, access the
-                  official documentation. If something is missing, feel free to
-                  chat with the support team on Discord - 24/7 LIVE Service.
-                </Typography>
-              </Box>
+                  <Paper sx={{ p: 4, borderRadius: 0 }}>
+                    <Typography variant="subtitle1" fontStyle="italic">
+                      {member.description}
+                    </Typography>
+                  </Paper>
+
+                  <Link
+                    href={member.link}
+                    underline="none"
+                    mt={3}
+                    display="block"
+                    fontWeight="bold"
+                  >
+                    Tìm hiểu thêm
+                  </Link>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
+            <Divider color="primary" sx={{ marginTop: 8 }} />
+          </Box>
+        ))}
+      </Container>
+
+      <Container maxWidth="lg">
+        <Box textAlign="center">
+          <Typography variant="h3" my={2}>
+            Sản phẩm của nhóm
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            fontWeight="300"
+            maxWidth="620px"
+            display="block"
+            margin="0 auto"
+            color="#666"
+            mt={2}
+          >
+            Đôi lời giới thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.Đôi
+            lời giới thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.Đôi lời
+            giới thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.Đôi lời giới
+            thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.
+          </Typography>
         </Box>
-        <Box mt={4}>
-          <Grid container>
-            <Grid item md={6}>
-              <Box>
-                <StyledIconBox>
-                  <AppleIcon fontSize="large" />
-                </StyledIconBox>
-                <Typography variant="h3" color="secondary" my={2}>
-                  Working Process
-                </Typography>
-
-                <Typography variant="subtitle1">
-                  NodeJS is an open-source, cross-platform runtime environment
-                  that allows developers to create all kinds of server-side
-                  tools and applications in JavaScript. Express is the most
-                  popular Node web framework, powered by middleware packages
-                  created and actively supported by developers across the globe.
-                  For more information please access the product documentation.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item md={6}>
-              <CardMedia
-                component="img"
-                src={docs}
-                sx={{ width: "60%", ml: 10 }}
-              />
-            </Grid>
+        <Grid container>
+          <Grid item md={6}>
+            <CardMedia
+              component="img"
+              src={poster}
+              sx={{ m: 4, width: "80%" }}
+            />
           </Grid>
-        </Box>
-        <Box mt={4}>
-          <Grid container>
-            <Grid item md={6}>
-              <CardMedia
-                component="img"
-                src={docs}
-                sx={{ width: "60%", ml: 10 }}
-              />
-            </Grid>
-            <Grid item md={6}>
-              <Box>
-                <StyledIconBox>
-                  <AppleIcon fontSize="large" />
-                </StyledIconBox>
-                <Typography variant="h3" color="secondary" my={2}>
-                  Documentation
+          <Grid item md={6}>
+            <Box m={4}>
+              <Paper
+                sx={{
+                  p: 3,
+                  borderRadius: 0,
+                  "& .MuiTypography-root": {
+                    fontWeight: "300",
+                    fontStyle: "italic",
+                    lineHeight: 1.7,
+                    fontFamily: "Roboto",
+                    fontSize: 18,
+                  },
+                }}
+              >
+                <Typography variant="subtitle1" fontSize={20}>
+                  Cảm ơn cả nhóm đã cùng đồng hành để hoàn thiện sản phẩm{" "}
                 </Typography>
-
-                <Typography variant="subtitle2">
-                  For more information regarding the product usage, access the
-                  official documentation. If something is missing, feel free to
-                  chat with the support team on Discord - 24/7 LIVE Service.
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+              </Paper>
+              <Button variant="contained" color="primary" sx={{ marginTop: 3 }}>
+                <Typography
+                  variant="subtitle1"
+                  fontWeight="bold"
+                  fontStyle="uppercase"
+                >
+                  XEM TẠI ĐÂY
                 </Typography>
-              </Box>
-            </Grid>
+              </Button>
+            </Box>
           </Grid>
+        </Grid>
+        <Box width="fit-content" mx="auto">
+          <YouTube
+            videoId="1MvJ7FhWKd8"
+            opts={{
+              height: "500",
+              width: "900",
+              playerVars: {
+                // https://developers.google.com/youtube/player_parameters
+                autoplay: 1,
+              },
+            }}
+          />
         </Box>
       </Container>
+
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: "center", maxWidth: "600px", mx: "auto", mt: 2 }}>
+        <Box sx={{ textAlign: "center", maxWidth: "600px", mx: "auto", mt: 8 }}>
           <Typography variant="h3" my={2}>
-            Our Team
+            Tìm hiểu về nhóm chúng mình
           </Typography>
           <Typography variant="subtitle1">
             Riot Games was founded in 2006 to develop, publish, and support the

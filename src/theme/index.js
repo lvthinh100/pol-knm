@@ -8,6 +8,7 @@ import { useMemo } from "react";
 
 import palette from "./palette";
 import typography from "./typography";
+import components from "./components";
 // import shadows from "./shadows";
 // import ComponentOverrides from "./overrides";
 
@@ -18,6 +19,7 @@ export default function ThemeProvider({ children }) {
       typography,
       //   shadows: shadows,
       shape: { borderRadius: 8 },
+      components,
     }),
     []
   );

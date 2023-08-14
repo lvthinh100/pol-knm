@@ -7,7 +7,7 @@ const TEAM_INFO = {
       Wonder what engineers do besides writing code? Check out Reza and learn about his class at Cal State Fullerton, which covered 
       everything from the basics of web security to the very depths of steganography.    
       `,
-      image: "thinh.jpg",
+      image: "members/thinh.jpg",
     },
     {
       role: "Tech",
@@ -16,7 +16,7 @@ const TEAM_INFO = {
       Wonder what engineers do besides writing code? Check out Reza and learn about his class at Cal State Fullerton, which covered 
       everything from the basics of web security to the very depths of steganography.    
       `,
-      image: "khang.jpg",
+      image: "members/khang.jpg",
     },
   ],
 };

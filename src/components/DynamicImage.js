@@ -4,7 +4,7 @@ import { CardMedia } from "@mui/material";
 const DynamicImage = ({ path, alt }) => {
   const [imageSrc, setImageSrc] = useState("");
 
-  import(`../assets/img/members/${path}`).then((module) => {
+  import(`../assets/img/${path}`).then((module) => {
     setImageSrc(module.default);
   });
 

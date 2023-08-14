@@ -11,6 +11,9 @@ const palette = {
   highlighter: {
     main: "#D3A17E",
   },
+  background: {
+    default: "#f2f2f2",
+  },
 };
 
 export default palette;

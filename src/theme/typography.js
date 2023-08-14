@@ -48,7 +48,7 @@ const typography = {
     ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
   },
   subtitle1: {
-    fontFamily: "Lato, Frank Ruhl Libre,Quicksand, sans-serif",
+    fontFamily: "Roboto, Frank Ruhl Libre,Quicksand, sans-serif",
     fontWeight: 400,
     lineHeight: 1.5,
     fontSize: pxToRem(16),
