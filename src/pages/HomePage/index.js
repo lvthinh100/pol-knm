@@ -11,25 +11,27 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import AppleIcon from "@mui/icons-material/Apple";
 import YouTube from "react-youtube";
 
-import docs from "../../assets/img/docs.png";
 import head1 from "../../assets/img/head1.jpg";
 import head2 from "../../assets/img/head2.jpg";
 import head3 from "../../assets/img/head3.jpg";
 import head4 from "../../assets/img/head4.jpg";
 import poster from "../../assets/img/poster.jpg";
 
-import { StyledIconBox } from "./style";
 import TEAM_INFO from "../../contents/members";
 import CELEB_INFO from "../../contents/celebs";
 import DynamicImage from "../../components/DynamicImage";
 import Carousel from "react-material-ui-carousel";
 import Logo from "../../components/Logo";
+import AnimatedText from "../../components/AnimatedText";
+import PolText from "../../components/PolText";
+import SlideReveal from "../../components/Animation/SlideReveal";
+import { motion } from "framer-motion";
+import ShowOnView from "../../components/Animation/ShowOnView";
 
 const StyledCarouselBox = styled(Box)(({ backgroundImage }) => ({
-  height: "80vh",
+  height: "500px",
   background: `${backgroundImage} rgba(0, 0, 0, 0.6)`,
   backgroundSize: "cover",
   backgroundBlendMode: "multiply",
@@ -37,6 +39,7 @@ const StyledCarouselBox = styled(Box)(({ backgroundImage }) => ({
 }));
 
 const HomePage = () => {
+  const text1 = "Đồng hành cùng pol tìm hiểu về";
   return (
     <Box>
       <Container
@@ -50,7 +53,6 @@ const HomePage = () => {
         </Box>
         <Box
           sx={{
-            textAlign: "center",
             color: "#fff",
             p: "0px 0px 140px",
             position: "relative",
@@ -63,18 +65,33 @@ const HomePage = () => {
               top: 20,
               left: "50%",
               transform: "translateX(-50%)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            <Typography variant="h2">Power of Life</Typography>
-            <Typography variant="subtitle1">
-              Đồng hành cùng PoL tìm hiểu về
+            <SlideReveal>
+              <Typography variant="h2">Power of Life</Typography>
+            </SlideReveal>
+            <Typography
+              variant="subtitle1"
+              component={motion.p}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 4 }}
+            >
+              Đồng hành cùng <PolText /> tìm hiểu về
             </Typography>
-            <Typography fontSize={100} fontFamily="Signature" mt={4}>
-              Real Value of Life
-            </Typography>
+            <AnimatedText />
           </Box>
 
-          <Carousel autoPlay indicators={false} duration={300}>
+          <Carousel
+            autoPlay
+            indicators={false}
+            interval={6000}
+            duration={1000}
+            animation="slide"
+          >
             <StyledCarouselBox
               backgroundImage={`url(${head1})`}
             ></StyledCarouselBox>
@@ -92,7 +109,9 @@ const HomePage = () => {
       </Container>
       <Container maxWidth="lg">
         <Box textAlign="center" mb={10}>
-          <Typography variant="h2">"Real Value of Life" là gì ?</Typography>
+          <Typography variant="h2" fontWeight="bolder">
+            "Real Value of Life" là gì ?
+          </Typography>
           <Typography
             variant="subtitle1"
             fontWeight="300"
@@ -110,36 +129,40 @@ const HomePage = () => {
           </Typography>
         </Box>
         {CELEB_INFO.members.map((member, i) => (
-          <Box mt={8}>
+          <Box mt={8} key={i}>
             <Grid container direction={i % 2 === 0 ? "row" : "row-reverse"}>
               <Grid item md={6}>
-                <DynamicImage path={member.image} alt={member.name} />
+                <ShowOnView>
+                  <DynamicImage path={member.image} alt={member.name} />
+                </ShowOnView>
               </Grid>
               <Grid item md={6}>
-                <Box mx={8}>
-                  <Typography variant="h3" color="secondary" my={2}>
-                    {member.name}
-                  </Typography>
-                  <Typography variant="subtitle1" my={2}>
-                    {member.role}
-                  </Typography>
-
-                  <Paper sx={{ p: 4, borderRadius: 0 }}>
-                    <Typography variant="subtitle1" fontStyle="italic">
-                      {member.description}
+                <ShowOnView direction="right">
+                  <Box mx={8}>
+                    <Typography variant="h3" color="secondary" my={2}>
+                      {member.name}
                     </Typography>
-                  </Paper>
+                    <Typography variant="subtitle1" my={2}>
+                      {member.role}
+                    </Typography>
 
-                  <Link
-                    href={member.link}
-                    underline="none"
-                    mt={3}
-                    display="block"
-                    fontWeight="bold"
-                  >
-                    Tìm hiểu thêm
-                  </Link>
-                </Box>
+                    <Paper sx={{ p: 4, borderRadius: 0 }}>
+                      <Typography variant="subtitle1" fontStyle="italic">
+                        {member.description}
+                      </Typography>
+                    </Paper>
+
+                    <Link
+                      href={member.link}
+                      underline="none"
+                      mt={3}
+                      display="block"
+                      fontWeight="bold"
+                    >
+                      Tìm hiểu thêm
+                    </Link>
+                  </Box>
+                </ShowOnView>
               </Grid>
             </Grid>
             <Divider color="primary" sx={{ marginTop: 8 }} />
@@ -149,9 +172,11 @@ const HomePage = () => {
 
       <Container maxWidth="lg">
         <Box textAlign="center">
-          <Typography variant="h3" my={2}>
-            Sản phẩm của nhóm
-          </Typography>
+          <ShowOnView>
+            <Typography variant="h3" my={2}>
+              Sản phẩm của nhóm
+            </Typography>
+          </ShowOnView>
           <Typography
             variant="subtitle1"
             fontWeight="300"
@@ -169,54 +194,66 @@ const HomePage = () => {
         </Box>
         <Grid container>
           <Grid item md={6}>
-            <CardMedia
-              component="img"
-              src={poster}
-              sx={{ m: 4, width: "80%" }}
-            />
+            <ShowOnView>
+              <CardMedia
+                component="img"
+                src={poster}
+                sx={{ m: 4, width: "80%", border: "3px solid #222" }}
+              />
+            </ShowOnView>
           </Grid>
           <Grid item md={6}>
-            <Box m={4}>
-              <Paper
-                sx={{
-                  p: 3,
-                  borderRadius: 0,
-                  "& .MuiTypography-root": {
-                    fontWeight: "300",
-                    fontStyle: "italic",
-                    lineHeight: 1.7,
-                    fontFamily: "Roboto",
-                    fontSize: 18,
-                  },
-                }}
-              >
-                <Typography variant="subtitle1" fontSize={20}>
-                  Cảm ơn cả nhóm đã cùng đồng hành để hoàn thiện sản phẩm{" "}
-                </Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-              </Paper>
-              <Button variant="contained" color="primary" sx={{ marginTop: 3 }}>
-                <Typography
-                  variant="subtitle1"
-                  fontWeight="bold"
-                  fontStyle="uppercase"
+            <ShowOnView direction="right">
+              <Box m={4}>
+                <Paper
+                  sx={{
+                    p: 3,
+                    borderRadius: 0,
+                    "& .MuiTypography-root": {
+                      fontWeight: "300",
+                      fontStyle: "italic",
+                      lineHeight: 1.7,
+                      fontFamily: "Roboto",
+                      fontSize: 18,
+                    },
+                  }}
                 >
-                  XEM TẠI ĐÂY
-                </Typography>
-              </Button>
-            </Box>
+                  <Typography variant="subtitle1" fontSize={20}>
+                    Cảm ơn cả nhóm đã cùng đồng hành để hoàn thiện sản phẩm{" "}
+                  </Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                </Paper>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{ marginTop: 3 }}
+                >
+                  <Typography
+                    variant="subtitle1"
+                    fontWeight="bold"
+                    fontStyle="uppercase"
+                  >
+                    XEM TẠI ĐÂY
+                  </Typography>
+                </Button>
+              </Box>
+            </ShowOnView>
           </Grid>
         </Grid>
-        <Box width="fit-content" mx="auto">
+        <Box
+          width="fit-content"
+          mx="auto"
+          sx={{ p: 0.5, border: "1px solid #888" }}
+        >
           <YouTube
             videoId="1MvJ7FhWKd8"
             opts={{
@@ -251,35 +288,40 @@ const HomePage = () => {
                 container
                 direction={i % 2 === 1 ? "row" : "row-reverse"}
                 mb={20}
+                key={i}
               >
                 <Grid item md={6} alignItems="center">
-                  <Box sx={{ mx: 10, my: 5 }}>
-                    <Typography
-                      variant="subtitle1"
-                      sx={{
-                        backgroundColor: "secondary.main",
-                        display: "inline-block",
-                        color: "white",
-                        fontWeight: "bolder",
-                        textTransform: "uppercase",
-                        p: [1, 0.5],
-                      }}
-                    >
-                      {member.role}
-                    </Typography>
-                    <Typography variant="h2" sx={{ my: 2 }}>
-                      {member.name}
-                    </Typography>
-                    <Typography variant="subtitle1">
-                      {member.description}
-                    </Typography>
-                    <Button variant="contained" sx={{ mt: 2 }}>
-                      More Info
-                    </Button>
-                  </Box>
+                  <ShowOnView>
+                    <Box sx={{ mx: 10, my: 5 }}>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{
+                          backgroundColor: "secondary.main",
+                          display: "inline-block",
+                          color: "white",
+                          fontWeight: "bolder",
+                          textTransform: "uppercase",
+                          p: [1, 0.5],
+                        }}
+                      >
+                        {member.role}
+                      </Typography>
+                      <Typography variant="h2" sx={{ my: 2 }}>
+                        {member.name}
+                      </Typography>
+                      <Typography variant="subtitle1">
+                        {member.description}
+                      </Typography>
+                      <Button variant="contained" sx={{ mt: 2 }}>
+                        More Info
+                      </Button>
+                    </Box>
+                  </ShowOnView>
                 </Grid>
                 <Grid item md={6}>
-                  <DynamicImage path={member.image} alt="thinh" />
+                  <ShowOnView direction="right">
+                    <DynamicImage path={member.image} alt="thinh" />
+                  </ShowOnView>
                 </Grid>
               </Grid>
             );

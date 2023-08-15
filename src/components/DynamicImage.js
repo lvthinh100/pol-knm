@@ -13,7 +13,7 @@ const DynamicImage = ({ path, alt }) => {
       component="img"
       src={imageSrc}
       alt={alt}
-      sx={{ width: "60%", mx: 10 }}
+      sx={{ width: "60%", mx: 10, border: "3px solid #333" }}
     />
   );
 };
