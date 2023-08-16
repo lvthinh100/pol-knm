@@ -6,12 +6,16 @@ import {
   Container,
   Divider,
   Grid,
+  IconButton,
   Link,
   Paper,
   Typography,
   styled,
 } from "@mui/material";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+
 import YouTube from "react-youtube";
+import { motion } from "framer-motion";
 
 import head1 from "../../assets/img/head1.jpg";
 import head2 from "../../assets/img/head2.jpg";
@@ -27,7 +31,6 @@ import Logo from "../../components/Logo";
 import AnimatedText from "../../components/AnimatedText";
 import PolText from "../../components/PolText";
 import SlideReveal from "../../components/Animation/SlideReveal";
-import { motion } from "framer-motion";
 import ShowOnView from "../../components/Animation/ShowOnView";
 
 const StyledCarouselBox = styled(Box)(({ backgroundImage }) => ({
@@ -37,6 +40,18 @@ const StyledCarouselBox = styled(Box)(({ backgroundImage }) => ({
   backgroundBlendMode: "multiply",
   backgroundPosition: "center",
 }));
+
+const StyledPaper = styled(Paper)({
+  padding: 10,
+  borderRadius: 0,
+  "& .MuiTypography-root": {
+    fontWeight: "300",
+    fontStyle: "italic",
+    lineHeight: 1.7,
+    fontFamily: "Roboto",
+    fontSize: 18,
+  },
+});
 
 const HomePage = () => {
   const text1 = "Đồng hành cùng pol tìm hiểu về";
@@ -306,15 +321,23 @@ const HomePage = () => {
                       >
                         {member.role}
                       </Typography>
-                      <Typography variant="h2" sx={{ my: 2 }}>
+                      <Typography variant="h3" sx={{ my: 2 }}>
                         {member.name}
                       </Typography>
-                      <Typography variant="subtitle1">
-                        {member.description}
-                      </Typography>
-                      <Button variant="contained" sx={{ mt: 2 }}>
-                        More Info
-                      </Button>
+                      <StyledPaper elevation={3}>
+                        <Typography variant="subtitle1">
+                          {member.description}
+                        </Typography>
+                      </StyledPaper>
+                      <IconButton
+                        component="a"
+                        href="https://facebook.com"
+                        variant="contained"
+                        target="_blank"
+                        sx={{ mt: 2 }}
+                      >
+                        <FacebookRoundedIcon color="primary" fontSize="large" />
+                      </IconButton>
                     </Box>
                   </ShowOnView>
                 </Grid>

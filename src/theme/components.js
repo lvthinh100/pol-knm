@@ -32,6 +32,10 @@ const components = {
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
       }
+
+      #root {
+        overflow: hidden
+      }
     `,
   },
 };
