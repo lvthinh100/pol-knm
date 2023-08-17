@@ -18,7 +18,14 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Grid
           container
-          sx={{ borderTop: "1px solid #666", py: 3 }}
+          sx={{
+            borderTop: "1px solid #666",
+            py: 3,
+            "& a": {
+              textDecoration: "none",
+              color: "secondary.main",
+            },
+          }}
           rowSpacing={3}
         >
           <Grid item md={3}>
@@ -49,32 +56,70 @@ const Footer = () => {
           </Grid>
           <Grid item md={3}>
             <Typography variant="h6" mb={1}>
-              Resource
+              Thông tin
             </Typography>
             <Stack direction="column">
-              <Typography variant="subtitle1">Support</Typography>
-              <Typography variant="subtitle1">Documentation</Typography>
-              <Typography variant="subtitle1">Vlog</Typography>
+              <Typography component={"a"} href="/" variant="subtitle1">
+                Home
+              </Typography>
+              <Typography component={"a"} href="/documents" variant="subtitle1">
+                Documents
+              </Typography>
+              <Typography component={"a"} href="/about" variant="subtitle1">
+                About us
+              </Typography>
             </Stack>
           </Grid>
           <Grid item md={3}>
             <Typography variant="h6" mb={1}>
-              Resource
+              Thành viên
             </Typography>
             <Stack direction="column">
-              <Typography variant="subtitle1">Support</Typography>
-              <Typography variant="subtitle1">Documentation</Typography>
-              <Typography variant="subtitle1">Vlog</Typography>
+              <Typography component={"a"} href="/member/my" variant="subtitle1">
+                Ngọc Mỹ
+              </Typography>
+              <Typography
+                component={"a"}
+                href="/member/tin"
+                variant="subtitle1"
+              >
+                Thanh Tín
+              </Typography>
+              <Typography
+                component={"a"}
+                href="/member/khang"
+                variant="subtitle1"
+              >
+                Nguyên Khang
+              </Typography>
             </Stack>
           </Grid>
           <Grid item md={3}>
             <Typography variant="h6" mb={1}>
-              Resource
+              Thành viên
             </Typography>
             <Stack direction="column">
-              <Typography variant="subtitle1">Support</Typography>
-              <Typography variant="subtitle1">Documentation</Typography>
-              <Typography variant="subtitle1">Vlog</Typography>
+              <Typography
+                component={"a"}
+                href="/member/thinh"
+                variant="subtitle1"
+              >
+                Văn Thịnh
+              </Typography>
+              <Typography
+                component={"a"}
+                href="/member/truong"
+                variant="subtitle1"
+              >
+                Nhựt Trường
+              </Typography>
+              <Typography
+                component={"a"}
+                href="/member/hoang"
+                variant="subtitle1"
+              >
+                Đức Hoàng
+              </Typography>
             </Stack>
           </Grid>
         </Grid>

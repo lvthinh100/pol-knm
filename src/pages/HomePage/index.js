@@ -12,7 +12,9 @@ import {
   Typography,
   styled,
 } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import EastIcon from "@mui/icons-material/East";
 
 import YouTube from "react-youtube";
 import { motion } from "framer-motion";
@@ -209,13 +211,11 @@ const HomePage = () => {
         </Box>
         <Grid container>
           <Grid item md={6}>
-            <ShowOnView>
-              <CardMedia
-                component="img"
-                src={poster}
-                sx={{ m: 4, width: "80%", border: "3px solid #222" }}
-              />
-            </ShowOnView>
+            <CardMedia
+              component="img"
+              src={poster}
+              sx={{ m: 4, width: "80%", border: "3px solid #222" }}
+            />
           </Grid>
           <Grid item md={6}>
             <ShowOnView direction="right">
@@ -296,7 +296,7 @@ const HomePage = () => {
             of the explosive growth of esports.{" "}
           </Typography>
         </Box>
-        <Box mt={15}>
+        <Box mt={8}>
           {TEAM_INFO.members.map((member, i) => {
             return (
               <Grid
@@ -305,6 +305,12 @@ const HomePage = () => {
                 mb={20}
                 key={i}
               >
+                <Grid item md={12}>
+                  <Divider
+                    sx={{ borderBottomWidth: 1, marginBottom: 8 }}
+                    color="secondary"
+                  />
+                </Grid>
                 <Grid item md={6} alignItems="center">
                   <ShowOnView>
                     <Box sx={{ mx: 10, my: 5 }}>
@@ -324,20 +330,20 @@ const HomePage = () => {
                       <Typography variant="h3" sx={{ my: 2 }}>
                         {member.name}
                       </Typography>
-                      <StyledPaper elevation={3}>
+                      <StyledPaper elevation={3} sx={{ marginBottom: 5 }}>
                         <Typography variant="subtitle1">
                           {member.description}
                         </Typography>
                       </StyledPaper>
-                      <IconButton
-                        component="a"
-                        href="https://facebook.com"
-                        variant="contained"
-                        target="_blank"
-                        sx={{ mt: 2 }}
-                      >
-                        <FacebookRoundedIcon color="primary" fontSize="large" />
-                      </IconButton>
+                      <Link component={RouterLink} to={`/member/${member.id}`}>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          endIcon={<EastIcon />}
+                        >
+                          Xem thêm
+                        </Button>
+                      </Link>
                     </Box>
                   </ShowOnView>
                 </Grid>

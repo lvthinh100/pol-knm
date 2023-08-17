@@ -17,7 +17,7 @@ const CELEB_INFO = {
         Wonder what engineers do besides writing code? Check out Reza and learn about his class at Cal State Fullerton, which covered 
         everything from the basics of web security to the very depths of steganography.    
         `,
-      image: "members/khang.jpg",
+      image: "members/khangpro.png",
       link: "https://vi.wikipedia.org/wiki/Steve_Jobs",
     },
   ],
