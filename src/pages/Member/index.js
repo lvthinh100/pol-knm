@@ -16,7 +16,7 @@ import CloudCircleIcon from "@mui/icons-material/CloudCircle";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import CakeIcon from "@mui/icons-material/Cake";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import cover from "../../assets/img/bg-cover-products.jpg";
 import avatar from "../../assets/img/default-avatar.png";
 import TEAM_INFO from "../../contents/members";
@@ -51,7 +51,7 @@ const Member = () => {
         }}
       >
         <Typography variant="h3" color="white" maxWidth={440} marginLeft="auto">
-          Extend your team's capacity with rock star L&D talent
+          Cùng tìm hiểu thêm về các thành viên trong PoL nào.
         </Typography>
       </Box>
       <Container maxWidth="lg">
@@ -67,7 +67,7 @@ const Member = () => {
           src={memberImg === "" ? avatar : memberImg}
         />
         <Box mt={4}>
-          <Grid container>
+          <Grid container spacing={10}>
             <Grid item md={6}>
               <Typography fontWeight="bold" fontSize={30} mb={1}>
                 {member.name}
@@ -88,7 +88,7 @@ const Member = () => {
                 />
                 <Typography variant="subtitle1">{member.place}</Typography>
               </Stack>
-              <Typography>{member.detailDesc}</Typography>
+              <Typography whiteSpace="pre-line">{member.detailDesc}</Typography>
               <Stack direction="row" alignItems="center" spacing={1} my={2}>
                 <IconButton
                   LinkComponent="a"

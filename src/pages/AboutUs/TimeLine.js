@@ -6,30 +6,53 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import HotelIcon from "@mui/icons-material/Hotel";
+
+import SearchIcon from "@mui/icons-material/Search";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import RepeatIcon from "@mui/icons-material/Repeat";
+import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
+import Diversity3Icon from "@mui/icons-material/Diversity3";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+
 import Typography from "@mui/material/Typography";
 
 const timelineConfig = [
   {
-    date: "10/4/2023 - 18/4/2023",
-    title: "Tạo nhóm",
-    description: "Chi tiết sơ về hoạt động",
-    icon: RepeatIcon,
+    date: "18/7/2023 - 21/7/2023",
+    title: "Lên ý tưởng và xây dựng môi trường  làm việc",
+    description:
+      "Phân tích đề tài 'Real Value  of Life' và lên kế hoạch phát triển ",
+    icon: SearchIcon,
+    color: "#6CA7ED",
   },
   {
-    date: "11/4/2023 - 18/4/2023",
-    title: "Tạo nhóm",
-    description: "Chi tiết sơ về hoạt động",
-    icon: RepeatIcon,
+    date: "22/7/2023 - 28/7/2023",
+    title: "Tạo kịch bản Video",
+    description:
+      "Đóng góp thêm ý tưởng cho video và hoàn thiện kịch bản chính cho video",
+    icon: LocalLibraryIcon,
+    color: "#63AFB4",
   },
   {
-    date: "12/4/2023 - 18/4/2023",
-    title: "Tạo nhóm",
-    description: "Chi tiết sơ về hoạt động",
-    icon: RepeatIcon,
+    date: "29/7/2023 - 04/8/2023",
+    title: "Chuẩn bị cho quá trình quay Video",
+    description: "Chuẩn bị công cụ, soạn thảo câu hỏi phỏng vấn, thực địa",
+    icon: SettingsSuggestIcon,
+    color: "#589B85",
+  },
+  {
+    date: "5/8/2023 - 13/8/2023",
+    title: "Bắt đầu phỏng vấn",
+    description: "Tiến hành phỏng vấn, Thu thập đầy đủ Source Video",
+    icon: Diversity3Icon,
+    color: "#CBBE5D",
+  },
+  {
+    date: "Từ 14/08 trở đi",
+    title: "Hoàn thiện đồ án",
+    description: "Edit Video, Thiết kế Poster, tạo và quản lý Website",
+    icon: ArrowCircleRightIcon,
+    color: "#E5A67F",
   },
 ];
 
@@ -48,7 +71,7 @@ const TimeLine = () => {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot>
+            <TimelineDot sx={{ backgroundColor: timeline.color }}>
               <timeline.icon />
             </TimelineDot>
             <TimelineConnector />

@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Box, Container } from "@mui/material";
 import Downloadable from "../../components/Downloadable";
 
-import contract from "../../assets/documents/contract.pdf";
 import DOCUMENTS from "../../contents/documents";
 
 const DocumentPage = () => {
@@ -10,9 +9,14 @@ const DocumentPage = () => {
     <Box>
       <Box textAlign="center" mb={4}>
         <Typography variant="h2">TÀI LIỆU</Typography>
-        <Typography variant="subtitle1">
-          Mô tả sơ về tài liệu.Mô tả sơ về tài liệuMô tả sơ về tài liệuMô tả sơ
-          về tài liệuMô tả sơ về tài liệu
+        <Typography
+          variant="subtitle1"
+          maxWidth={600}
+          sx={{ margin: "0 auto" }}
+        >
+          Trong quá trình thực hiện đồ án, nhóm của chúng mình đã thống nhất và
+          tạo ra một loạt tài liệu quan trọng để đảm bảo tiến trình công việc
+          suôn sẻ và đồng thời định hướng về cách thực hiện đồ án
         </Typography>
       </Box>
       {DOCUMENTS.map((doc, i) => (

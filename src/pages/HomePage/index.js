@@ -131,18 +131,18 @@ const HomePage = () => {
           </Typography>
           <Typography
             variant="subtitle1"
-            fontWeight="300"
             maxWidth="620px"
             display="block"
             margin="0 auto"
             color="#666"
             mt={2}
           >
-            Đoạn văn mô tả chung về một số câu nói, nhận định của những doanh
-            nhân, Đoạn văn mô tả chung về một số câu nói, nhận định của những
-            doanh nhân, Đoạn văn mô tả chung về một số câu nói, nhận định của
-            những doanh nhân, Đoạn văn mô tả chung về một số câu nói, nhận định
-            của những doanh nhân,
+            Công việc chiếm một phần lớn cuộc sống mỗi người và cách duy nhất để
+            hài lòng là làm những gì mà mình nghĩ là to lớn. Và cách duy nhất để
+            làm những công việc tuyệt vời đó là yêu những gì mình làm. Nếu bạn
+            không tìm thấy lý tưởng này, hãy tiếp tục tìm kiếm, đừng nản lòng.
+            Trái tim sẽ chỉ lối cho bạn và mọi chuyện sẽ tốt dần theo thời gian.
+            Vì thế hãy quyết tâm đến cùng. Đừng bỏ cuộc
           </Typography>
         </Box>
         {CELEB_INFO.members.map((member, i) => (
@@ -189,24 +189,25 @@ const HomePage = () => {
 
       <Container maxWidth="lg">
         <Box textAlign="center">
-          <ShowOnView>
-            <Typography variant="h3" my={2}>
-              Sản phẩm của nhóm
-            </Typography>
-          </ShowOnView>
+          <Typography variant="h3" my={2}>
+            Sản phẩm của nhóm
+          </Typography>
           <Typography
             variant="subtitle1"
-            fontWeight="300"
-            maxWidth="620px"
+            maxWidth="720px"
             display="block"
             margin="0 auto"
             color="#666"
             mt={2}
           >
-            Đôi lời giới thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.Đôi
-            lời giới thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.Đôi lời
-            giới thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.Đôi lời giới
-            thiệu về sản phẩm.Đôi lời giới thiệu về sản phẩm.
+            Chào mừng bạn đến với video về các cuộc phỏng vấn ngắn về "The real
+            value of Life" - một cuộc hành trình thú vị để đi tìm giá trị thực
+            sự của cuộc sống. Trong thế giới vội vã và phức tạp của ngày nay,
+            chúng ta thường bị cuốn vào cuộc đua với thời gian và công việc, bỏ
+            qua những khoảnh khắc quý báu và ý nghĩa trong cuộc sống. Video này
+            là một cơ hội để chúng mình chia sẻ những câu chuyện tuyệt vời,
+            những kinh nghiệm đáng nhớ, và quan điểm sâu sắc về ý nghĩa thực sự
+            của cuộc sống.
           </Typography>
         </Box>
         <Grid container>
@@ -289,11 +290,11 @@ const HomePage = () => {
             Tìm hiểu về nhóm chúng mình
           </Typography>
           <Typography variant="subtitle1">
-            Riot Games was founded in 2006 to develop, publish, and support the
-            most player-focused games in the world. In 2009, we released our
-            debut title, League of Legends, to worldwide acclaim. League has
-            gone on to be the most-played PC game in the world and a key driver
-            of the explosive growth of esports.{" "}
+            Chào mừng đến với nhóm của chúng mình - một tập hợp đa dạng về tính
+            cách và kinh nghiệm, nhưng chúng mình hòa quyện thành một đội ngũ
+            đầy sức mạnh. Với sự hiện diện của 6 thành viên, bao gồm 5 anh chàng
+            và một cô gái, chúng mình đã tạo nên một tổ hợp độc đáo về khía cạnh
+            tư duy và góc nhìn.
           </Typography>
         </Box>
         <Box mt={8}>

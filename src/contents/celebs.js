@@ -1,24 +1,22 @@
 const CELEB_INFO = {
   members: [
     {
-      role: "Steve Jobs",
+      role: "Co-Founder Apple",
       name: "Steve Jobs",
       description: `
-        Wonder what engineers do besides writing code? Check out Reza and learn about his class at Cal State Fullerton, which covered 
-        everything from the basics of web security to the very depths of steganography.    
+        “Your time is limited, so don’t waste it living someone else’s life.”  
         `,
       image: "celebs/steve.jpg",
       link: "https://vi.wikipedia.org/wiki/Steve_Jobs",
     },
     {
-      role: "Tech",
-      name: "Le Nguyen Khang",
+      role: "Co-founded Microsoft",
+      name: "Bill Gates",
       description: `
-        Wonder what engineers do besides writing code? Check out Reza and learn about his class at Cal State Fullerton, which covered 
-        everything from the basics of web security to the very depths of steganography.    
+      "Tiền bạc không phải là tất cả. Có những thứ quan trọng hơn trong cuộc sống, như sức khỏe, gia đình và bạn bè."    
         `,
-      image: "members/khangpro.png",
-      link: "https://vi.wikipedia.org/wiki/Steve_Jobs",
+      image: "celebs/gates.jpg",
+      link: "https://en.wikipedia.org/wiki/Bill_Gates",
     },
   ],
 };
