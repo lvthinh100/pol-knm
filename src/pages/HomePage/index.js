@@ -100,6 +100,26 @@ const HomePage = () => {
               Đồng hành cùng <PolText /> tìm hiểu về
             </Typography>
             <AnimatedText />
+            <Box
+              component={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 3, duration: 3 }}
+              textAlign="center"
+            >
+              <Typography>
+                Một sản phẩm của đồ án môn học:{" "}
+                <Typography component="span" fontWeight="bold" color="primary">
+                  Kỹ Năng Mềm
+                </Typography>
+              </Typography>
+              <Typography>
+                Giáo viên hướng dẫn:{" "}
+                <Typography component="span" fontWeight="bold" color="primary">
+                  Đỗ Thị Thanh Hà{" "}
+                </Typography>
+              </Typography>
+            </Box>
           </Box>
 
           <Carousel
@@ -237,16 +257,63 @@ const HomePage = () => {
                   <Typography variant="subtitle1" fontSize={20}>
                     Cảm ơn cả nhóm đã cùng đồng hành để hoàn thiện sản phẩm{" "}
                   </Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
-                  <Typography>Kịch bản: Lâm Nguyễn Ngọc Mỹ</Typography>
+                  <Typography>
+                    <Typography component="span" color="primary">
+                      Kịch bản:{" "}
+                    </Typography>{" "}
+                    Lâm Nguyễn Ngọc Mỹ
+                  </Typography>
+                  <Typography>
+                    <Typography component="span" color="primary">
+                      Phỏng vấn:{" "}
+                    </Typography>
+                    Lâm Nguyễn Ngọc Mỹ, Trương Huỳnh Đức Hoàng, Lê Văn Thịnh, Lê
+                    Nguyên Khang, Lâm Nhựt trường
+                  </Typography>
+                  <Typography>
+                    <Typography component="span" color="primary">
+                      Poster:{" "}
+                    </Typography>{" "}
+                    Lê Nguyên Khang, Lâm Nhựt Trường
+                  </Typography>
+                  <Typography>
+                    {" "}
+                    <Typography component="span" color="primary">
+                      Editor:{" "}
+                    </Typography>{" "}
+                    Đặng Nguyễn Thanh Tín
+                  </Typography>
+                  <Typography>
+                    <Typography component="span" color="primary">
+                      Camera:{" "}
+                    </Typography>{" "}
+                    Lâm Nguyễn Ngọc Mỹ, Lê Nguyên Khang
+                  </Typography>
+                  <Typography>
+                    <Typography component="span" color="primary">
+                      Web:{" "}
+                    </Typography>{" "}
+                    Lê Văn Thịnh
+                  </Typography>
+                  <Typography>
+                    <Typography component="span" color="primary">
+                      Content:{" "}
+                    </Typography>{" "}
+                    Trương Huỳnh Đức Hoàng
+                  </Typography>
+                  <Typography>
+                    {" "}
+                    <Typography component="span" color="primary">
+                      Trình bày:{" "}
+                    </Typography>{" "}
+                    Lâm Nguyễn Ngọc Mỹ
+                  </Typography>
+                  <Typography>
+                    <Typography component="span" color="primary">
+                      Logo:{" "}
+                    </Typography>{" "}
+                    Lê Nguyên Khang
+                  </Typography>
                 </Paper>
                 <Button
                   variant="contained"

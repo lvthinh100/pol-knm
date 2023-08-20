@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 import hcmus from "../../assets/img/hcmusbg.jpg";
-import contact from "../../assets/img/contact.png";
+import contact from "../../assets/img/tin.jpg";
 
 import TimeLine from "./TimeLine";
 
