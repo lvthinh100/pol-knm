@@ -261,7 +261,7 @@ const HomePage = () => {
                       Phỏng vấn:{" "}
                     </Typography>
                     Lâm Nguyễn Ngọc Mỹ, Trương Huỳnh Đức Hoàng, Lê Văn Thịnh, Lê
-                    Nguyên Khang, Lâm Nhựt trường
+                    Nguyên Khang, Lâm Nhựt trường,Đặng Nguyễn Thanh Tín
                   </Typography>
                   <Typography>
                     <Typography component="span" color="primary">
@@ -280,7 +280,7 @@ const HomePage = () => {
                     <Typography component="span" color="primary">
                       Camera:{" "}
                     </Typography>{" "}
-                    Lâm Nguyễn Ngọc Mỹ, Lê Nguyên Khang
+                    Lâm Nguyễn Ngọc Mỹ, Lê Nguyên Khang,Đặng Nguyễn Thanh Tín
                   </Typography>
                   <Typography>
                     <Typography component="span" color="primary">
@@ -299,7 +299,7 @@ const HomePage = () => {
                     <Typography component="span" color="primary">
                       Trình bày:{" "}
                     </Typography>{" "}
-                    Lâm Nguyễn Ngọc Mỹ
+                    Lâm Nguyễn Ngọc Mỹ,Đặng Nguyễn Thanh Tín
                   </Typography>
                   <Typography>
                     <Typography component="span" color="primary">
