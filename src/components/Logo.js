@@ -1,17 +1,25 @@
 import React from "react";
-import { CardMedia } from "@mui/material";
-import img from "../assets/img/logo-text.png";
+import { CardMedia, Stack, Typography } from "@mui/material";
+import img from "../assets/img/logo.png";
 
 const Logo = () => {
   return (
-    <CardMedia
-      component="img"
-      sx={{
-        objectFit: "contain",
-        width: "fit-content",
-      }}
-      src={img}
-    />
+    <Stack direction="row" alignItems="center">
+      <CardMedia
+        component="img"
+        sx={{
+          objectFit: "contain",
+          width: "fit-content",
+          height: "35px",
+          marginRight: 1,
+        }}
+        src={img}
+      />
+
+      <Typography color="primary" fontWeight="bold" fontSize={15}>
+        Power of Life
+      </Typography>
+    </Stack>
   );
 };
 

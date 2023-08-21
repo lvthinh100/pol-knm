@@ -6,14 +6,12 @@ import {
   Container,
   Divider,
   Grid,
-  IconButton,
   Link,
   Paper,
   Typography,
   styled,
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import EastIcon from "@mui/icons-material/East";
 
 import YouTube from "react-youtube";
@@ -23,13 +21,12 @@ import head1 from "../../assets/img/head1.jpg";
 import head2 from "../../assets/img/head2.jpg";
 import head3 from "../../assets/img/head3.jpg";
 import head4 from "../../assets/img/head4.jpg";
-import poster from "../../assets/img/poster.jpg";
+import poster from "../../assets/img/poster.png";
 
 import TEAM_INFO from "../../contents/members";
 import CELEB_INFO from "../../contents/celebs";
 import DynamicImage from "../../components/DynamicImage";
 import Carousel from "react-material-ui-carousel";
-import Logo from "../../components/Logo";
 import AnimatedText from "../../components/AnimatedText";
 import PolText from "../../components/PolText";
 import SlideReveal from "../../components/Animation/SlideReveal";
@@ -56,7 +53,6 @@ const StyledPaper = styled(Paper)({
 });
 
 const HomePage = () => {
-  const text1 = "Đồng hành cùng pol tìm hiểu về";
   return (
     <Box>
       <Container
@@ -65,9 +61,6 @@ const HomePage = () => {
           borderRadius: 1,
         }}
       >
-        <Box mx="auto" width="fit-content">
-          <Logo />
-        </Box>
         <Box
           sx={{
             color: "#fff",
@@ -319,6 +312,9 @@ const HomePage = () => {
                   variant="contained"
                   color="primary"
                   sx={{ marginTop: 3 }}
+                  component="a"
+                  href="https://www.youtube.com/watch?v=9kKWnIpzrtM"
+                  target="_blank"
                 >
                   <Typography
                     variant="subtitle1"
@@ -338,14 +334,10 @@ const HomePage = () => {
           sx={{ p: 0.5, border: "1px solid #888" }}
         >
           <YouTube
-            videoId="1MvJ7FhWKd8"
+            videoId="9kKWnIpzrtM"
             opts={{
               height: "500",
               width: "900",
-              playerVars: {
-                // https://developers.google.com/youtube/player_parameters
-                autoplay: 1,
-              },
             }}
           />
         </Box>

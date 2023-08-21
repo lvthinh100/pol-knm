@@ -12,7 +12,7 @@ const Header = () => {
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Logo />
-          <Box display="flex" flexGrow={1}>
+          <Box display="flex" flexGrow={1} marginLeft={1}>
             <Link component={RouterLink} to="/">
               <Button variant="text" color="secondary" startIcon={<HomeIcon />}>
                 Home

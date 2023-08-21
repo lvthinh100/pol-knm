@@ -152,9 +152,16 @@ const AboutUs = () => {
                 <Divider color="white" sx={{ mb: 2 }} />
 
                 <Box>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    component="a"
+                    href="tel:0796792539"
+                  >
                     LIÊN HỆ NGAY
                   </Button>
+
+                  <Typography>Số điện thoại: 0796792539</Typography>
                 </Box>
               </Stack>
             </Grid>
